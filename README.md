@@ -154,6 +154,10 @@ async function fetchUser() {
 **Repeat for Posts and Todos:**
 
 ```javascript
+/**
+* Fetch user data from API
+* Simulates getting user profile information
+*/
 async function fetchPosts() {
     const start = Date.now();
     try {
@@ -166,7 +170,10 @@ async function fetchPosts() {
         throw new Error(`Posts fetch failed: ${error.message}`);
     }
 }
-
+/**
+* Fetch user's posts from API
+* Simulates getting blog posts or social media content
+*/
 async function fetchTodos() {
     const start = Date.now();
     try {
@@ -188,6 +195,11 @@ async function fetchTodos() {
 This function loads data **one at a time** (slower).
 
 ```javascript
+/**
+ * SEQUENTIAL LOADING (SLOW)
+* Each request waits for the previous one to complete
+* Total time = sum of all request times
+*/
 async function loadSequential() {
     console.log('Starting SEQUENTIAL loading...');
     
@@ -242,6 +254,11 @@ async function loadSequential() {
 This function loads data **simultaneously** (faster).
 
 ```javascript
+/**
+* PARALLEL LOADING (FAST)
+* All requests start simultaneously
+* Total time ≈ slowest single request time
+*/
 async function loadParallel() {
     console.log('Starting PARALLEL loading...');
     
