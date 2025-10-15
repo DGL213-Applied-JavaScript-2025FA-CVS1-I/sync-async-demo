@@ -1,6 +1,6 @@
-# 🎯 Asynchronous Programming Demo - Complete Guide
+# Asynchronous Programming Demo - Complete Guide
 
-## 📋 Table of Contents
+## Table of Contents
 1. [Overview](#overview)
 2. [Prerequisites](#prerequisites)
 3. [Project Setup](#project-setup)
@@ -189,7 +189,7 @@ This function loads data **one at a time** (slower).
 
 ```javascript
 async function loadSequential() {
-    console.log('🐌 Starting SEQUENTIAL loading...');
+    console.log('Starting SEQUENTIAL loading...');
     
     // Disable buttons while loading
     disableButtons();
@@ -218,7 +218,7 @@ async function loadSequential() {
 
         // Calculate total time
         const totalTime = Date.now() - overallStart;
-        console.log(`✅ Total time: ${totalTime}ms`);
+        console.log(`Total time: ${totalTime}ms`);
         
     } catch (error) {
         displayError(error.message);
@@ -243,7 +243,7 @@ This function loads data **simultaneously** (faster).
 
 ```javascript
 async function loadParallel() {
-    console.log('⚡ Starting PARALLEL loading...');
+    console.log('Starting PARALLEL loading...');
     
     disableButtons();
     showLoading();
@@ -266,8 +266,8 @@ async function loadParallel() {
         displayTodos(todosResult.data);
 
         const totalTime = Date.now() - overallStart;
-        console.log(`✅ Total time: ${totalTime}ms`);
-        console.log(`⚡ Much faster because requests ran in parallel!`);
+        console.log(`Total time: ${totalTime}ms`);
+        console.log(`Much faster because requests ran in parallel!`);
         
     } catch (error) {
         // If ANY request fails, we catch it here
